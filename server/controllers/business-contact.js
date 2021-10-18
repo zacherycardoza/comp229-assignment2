@@ -92,7 +92,7 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
   let id = req.params.id;
 
-  BusinessContact.remove({ _id: id }, (err) => {
+  BusinessContact.deleteOne({ _id: id }, (err) => {
     if (err) {
       console.log(err);
       res.end(err);
