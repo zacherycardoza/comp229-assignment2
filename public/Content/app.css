@@ -1,1 +1,239 @@
-/* custom css goes here */
+:root {
+  --popred: #907163;
+  --popblue: #66fcf1;
+  --darkerblue: #45a29e;
+  --bgblack: #080c10;
+  --bgnotblack: #131c25;
+}
+@font-face {
+  font-family: "Inconsolata", monospace;
+  src: url("../fonts/montserrat/Montserrat-Regular.ttf");
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Inconsolata", monospace;
+  background-color: var(--bgblack);
+  color: #c5c6c7;
+}
+
+/*---------------------------------------------*/
+a {
+  font-family: "Inconsolata", monospace;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--popblue);
+  margin: 0px;
+  transition: all 0.4s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #66fcf1;
+}
+
+/*---------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+}
+
+p {
+  font-family: "Inconsolata", monospace;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0px;
+}
+
+ul,
+li {
+  margin: 0px;
+  list-style-type: none;
+}
+input,
+textarea,
+button {
+  outline: none;
+  border: none;
+}
+input,
+textarea,
+button:hover {
+  cursor: pointer;
+}
+
+.nav-link {
+  color: var(--darkerblue);
+}
+.navbar-custom {
+  color: var(--darkerblue);
+}
+.navbar-custom a:hover {
+  color: var(--popblue);
+}
+.toggler-custom {
+  background-color: var(--popblue);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.content {
+  width: 100%;
+  min-height: 100%;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-content {
+  width: 1163px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px 130px 88px 148px;
+}
+
+.pic {
+  width: 296px;
+}
+.pic img {
+  max-width: 100%;
+}
+.form {
+  width: 390px;
+}
+input.input1 {
+  height: 50px;
+  padding: 15px 0 0 2px;
+}
+textarea.input1 {
+  min-height: 100px;
+  padding: 1px 0 0 2px;
+}
+.wrap-input1 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+.input1 {
+  display: block;
+  width: 100%;
+  background-color: var(--bgblack);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--popblue);
+  border-bottom: solid 1px var(--popblue);
+}
+.shadow-input1 {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px;
+  color: var(--popblue);
+}
+.input1:focus + .shadow-input1 {
+  animation: anim-shadow 0.5s ease-in-out forwards;
+}
+/*---------------------------------------------*/
+.container-form-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.form-btn {
+  background-color: var(--popblue);
+  min-width: 100px;
+  border-radius: 5px;
+  color: var(--bgnotblack);
+}
+.form-btn:hover {
+  background-color: var(--darkerblue);
+  color: var(--popblue);
+}
+.link {
+  color: var(--popblue);
+}
+
+.title {
+  color: var(--popblue);
+}
+#navbarSupportedContent {
+  flex-grow: 0;
+}
+
+/* #region  Media Queries, And Animations */
+/*---------------------------------------------*/
+
+@media (max-width: 1200px) {
+  .pic {
+    width: 33.5%;
+  }
+
+  .form {
+    width: 44%;
+  }
+}
+
+@media (max-width: 992px) {
+  .container-content {
+    padding: 90px 80px 88px 90px;
+  }
+
+  .pic {
+    width: 35%;
+  }
+
+  .form {
+    width: 55%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-content {
+    padding: 90px 80px 88px 80px;
+  }
+
+  .pic {
+    display: none;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-content {
+    padding: 90px 15px 88px 15px;
+  }
+}
+
+@-webkit-keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 80px 30px;
+    opacity: 0;
+  }
+}
+
+@keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 80px 30px;
+    opacity: 0;
+  }
+}
+/* #endregion */

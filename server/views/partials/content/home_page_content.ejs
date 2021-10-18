@@ -1,0 +1,16 @@
+<!-- File Name: home_page_content.ejs | Student Name: Zachery Cardoza | Student Id: 301183433 | Oct 2nd, 2021 -->
+<div class="content">
+    <div class="row mt-5 mb-5 title"><h1>Hello,
+      <% if (typeof displayName == 'string' && displayName) { %>
+      <%= displayName %>
+      <% } else { %>
+      World!
+      <% } %>
+    </h1></div>
+    <div class="container-form-btn col-12">
+      <!-- onclick function to redirect to about me page -->
+      <button class="form-btn" onclick="javascript:location.href='/about'" type="button">
+        About Me
+      </button>
+    </div>
+  </div>

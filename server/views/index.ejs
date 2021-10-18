@@ -1,21 +1,31 @@
-<%- include partials/header.ejs %>
-
-<%- include partials/main_nav.ejs %>
+  <!-- File Name: index.ejs | Student Name: Zachery Cardoza | Student Id: 301183433 | Oct 2nd, 2021 -->
+  <%- include('partials/header.ejs') %>
   
-
+  <%- include('partials/main_nav.ejs') %>
+  
   <!-- Main Content -->
   <main class="container">
-    <div class="jumbotron">
-      <h1 class="display-4">Welcome to the <%= title %> page</h1>
-      
-    </div>
+    <!-- switch that decides which page content partial to import -->
+    <% switch(title) {
+      case "About": %>
+        <%- include('partials/content/about_page_content.ejs') %>
+        <% break;
+      case "Contact": %>
+        <%- include('partials/content/contact_page_content.ejs') %>
+        <% break;
+      case "Projects": %>
+        <%- include('partials/content/projects_page_content.ejs') %>
+        <% break;
+      case "Services": %>
+        <%- include('partials/content/services_page_content.ejs') %>
+        <% break;
+      default: %>
+        <%- include('partials/content/home_page_content.ejs') %>
+        <% break;
+    } %>
+
   </main>
   
-<%- include partials/bottom_nav.ejs %>  
-
-<%- include partials/footer.ejs %>
+  <%- include('partials/bottom_nav.ejs') %>  
   
-
-
-
-
+  <%- include('partials/footer.ejs') %>
