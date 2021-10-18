@@ -10,16 +10,17 @@
             <h1 class="title">Business Contacts</h1>
 
             <% if(typeof displayName == 'string' && displayName) { %>
-                <a href="/business-contact-list/add" class="form-btn" role="button">Add a Contact</a>
+                <a href="/business-contact-list/add" class="form-btn btn-sm" role="button">Add a Contact</a>
             <% } %>
             <br>
-            <table class="table table-bordered table-striped table-hover">
+            <table class="table table-striped popblue">
                 <!-- Header Row-->
                 <tr class="d-flex">
                         <th class="text-center col-3 title">Name</th>
                         <th class="text-center col-3 title">Email</th>
                         <th class="text-center col-3 title">Phone Number</th>
-                        <th class="text-center col-3 title">Note</th>
+                        <th class="text-center col-2 title">Note</th>
+                        <th class="text-center col-1 title">Edit</th>
                 </tr>
 
                 <!-- Repeatable Template Row -->
@@ -27,22 +28,18 @@
                 <% for(let count = 0; count < BusinessContactList.length; count++) { %>
                     <tr class="d-flex">
                         <% if(typeof displayName == 'string' && displayName) { %>
-                            <td class="text-center col-2"><%= BusinessContactList[count].name %></td>
-                            <td class="text-center col-2"><%= BusinessContactList[count].email %></td>
-                            <td class="text-center col-2"><%= BusinessContactList[count].phoneNumber %></td>
-                            <td class="col-3"><%= BusinessContactList[count].note %></td>           
-                            <td class="text-center col-1">
-                                <a href="/business-contact-list/edit/<%= BusinessContactList[count]._id %>" class="btn btn-primary btn-sm">
-                                <i class="fas fa-pencil-alt"></i> Edit</a>
-                            </td>
-                            <td class="text-center col-1">
-                                <a href="/business-contact-list/delete/<%= BusinessContactList[count]._id %>" class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash-alt"></i> Delete</a>
+                            <td class="text-center col-3"><%= BusinessContactList[count].name %></td>
+                            <td class="text-center col-3"><%= BusinessContactList[count].email %></td>
+                            <td class="text-center col-3"><%= BusinessContactList[count].phoneNumber %></td>
+                            <td class="col-2"><%= BusinessContactList[count].note %></td>
+                            <td class="col-1">
+                                <a href="/business-contact-list/edit/<%= BusinessContactList[count]._id %>" class="btn-sm form-btn">Update</a>
+                                <a href="/business-contact-list/delete/<%= BusinessContactList[count]._id %>" class="btn-sm form-btn">Delete</a>
                             </td>
                          <% } else { %>
-                            <td class="text-center col-2"><%= BusinessContactList[count].name %></td>
-                            <td class="text-center col-2"><%= BusinessContactList[count].email %></td>
-                            <td class="text-center col-2"><%= BusinessContactList[count].phoneNumber %></td>
+                            <td class="text-center col-3"><%= BusinessContactList[count].name %></td>
+                            <td class="text-center col-3"><%= BusinessContactList[count].email %></td>
+                            <td class="text-center col-3"><%= BusinessContactList[count].phoneNumber %></td>
                             <td class="col-3"><%= BusinessContactList[count].note %></td>  
                          <% } %>
                     </tr>

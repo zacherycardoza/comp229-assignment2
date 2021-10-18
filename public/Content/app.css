@@ -157,7 +157,6 @@ textarea.input1 {
 }
 .form-btn {
   background-color: var(--popblue);
-  min-width: 100px;
   border-radius: 5px;
   color: var(--bgnotblack);
 }
@@ -175,7 +174,15 @@ textarea.input1 {
 #navbarSupportedContent {
   flex-grow: 0;
 }
-
+.popblue {
+  color: var(--popblue);
+}
+.popbluebackground {
+  background-color: var(--popblue);
+}
+.maxWidth {
+  width: 100%;
+}
 /* #region  Media Queries, And Animations */
 /*---------------------------------------------*/
 
