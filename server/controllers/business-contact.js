@@ -6,14 +6,19 @@ let jwt = require("jsonwebtoken");
 
 // create a reference to the model
 let BusinessContact = require("../models/business-contact");
+const businessContact = require("../models/business-contact");
 
 module.exports.displayBusinessContactList = (req, res, next) => {
   BusinessContact.find((err, businessContactList) => {
     if (err) {
       return console.error(err);
     } else {
-      //console.log(businessContactList);
-
+      // sort contact list alphabetically
+      businessContactList.sort((a, b) => {
+        // ternary to get appropriate return value [-1, 0, 1]
+        let returnVal = a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1;
+        return returnVal == null ? 0 : returnVal;
+      });
       res.render("business-contact/list", {
         title: "Business Contacts",
         BusinessContactList: businessContactList,

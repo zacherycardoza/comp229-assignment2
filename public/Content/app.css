@@ -66,7 +66,9 @@ textarea,
 button:hover {
   cursor: pointer;
 }
-
+table {
+  border-color: var(--popblue);
+}
 .nav-link {
   color: var(--darkerblue);
 }

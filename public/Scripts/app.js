@@ -3,13 +3,12 @@
   function Start() {
     console.log("App Started...");
 
-    let deleteButtons = document.querySelectorAll(".btn-danger");
-
+    let deleteButtons = document.getElementsByClassName("delete-btn");
+    console.log(deleteButtons);
     for (button of deleteButtons) {
-      button.addEventListener("click", (event) => {
+      $(button).on("click", function (e) {
         if (!confirm("Are you sure?")) {
-          event.preventDefault();
-          window.location.assign("/business-contact-list");
+          e.preventDefault();
         }
       });
     }
