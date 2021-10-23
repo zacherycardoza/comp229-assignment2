@@ -1,4 +1,4 @@
-// installed 3rd party packages
+// File Name: app.js | Student Name: Zachery Cardoza | Student Id: 301183433 | Oct 23rd, 2021
 let createError = require("http-errors");
 let express = require("express");
 let path = require("path");
